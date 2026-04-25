@@ -1,0 +1,48 @@
+import type { ApiConfigInput, ApiConfigTemplate } from "../types/index";
+
+export const defaultApiConfigInput: ApiConfigInput = {
+  name: "",
+  provider: "deepseek",
+  kind: "llm",
+  protocol: "openai_compatible",
+  base_url: "https://api.deepseek.com",
+  api_key_required: true,
+  mode: "non_stream",
+  model: "deepseek-v4-pro",
+  thinking_enabled: true,
+  reasoning_effort: "high",
+  max_tokens: 4096,
+  context_window_tokens: 1_000_000,
+  temperature: null,
+  top_p: null,
+  top_k: null,
+  dimensions: null,
+  is_default: false,
+  api_key: null,
+  clear_api_key: false,
+};
+
+export const fallbackApiConfigTemplates: ApiConfigTemplate[] = [
+  {
+    name: "DeepSeek LLM",
+    provider: "deepseek",
+    provider_label: "DeepSeek",
+    kind: "llm",
+    protocol: "openai_compatible",
+    base_url: "https://api.deepseek.com",
+    api_key_required: true,
+    mode: "non_stream",
+    model: "deepseek-v4-pro",
+    thinking_enabled: true,
+    reasoning_effort: "high",
+    max_tokens: 4096,
+    context_window_tokens: 1_000_000,
+    temperature: null,
+    top_p: null,
+    top_k: null,
+    dimensions: null,
+    supports_streaming: false,
+    supports_thinking: true,
+    supports_embeddings: false,
+  },
+];

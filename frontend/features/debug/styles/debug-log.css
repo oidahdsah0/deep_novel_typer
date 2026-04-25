@@ -1,0 +1,236 @@
+.debug-log-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  gap: 10px;
+  height: clamp(420px, calc(100vh - 260px), 660px);
+  min-height: 420px;
+}
+
+.debug-log-list,
+.debug-log-detail {
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.debug-log-list {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 6px;
+  overflow: auto;
+}
+
+.debug-log-row {
+  display: grid;
+  grid-template-areas:
+    "status title token duration"
+    "status meta meta meta";
+  grid-template-columns: 56px minmax(0, 1fr) max-content max-content;
+  gap: 2px 8px;
+  align-items: start;
+  min-height: 50px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.debug-log-row:hover,
+.debug-log-row.active {
+  background: rgba(233, 232, 224, 0.84);
+}
+
+.debug-log-row .debug-status {
+  grid-area: status;
+  justify-self: start;
+  margin-top: 1px;
+}
+
+.debug-log-row strong {
+  grid-area: title;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.debug-log-row small {
+  grid-area: meta;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.debug-log-token,
+.debug-log-duration {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.debug-log-token {
+  grid-area: token;
+  justify-self: end;
+}
+
+.debug-log-duration {
+  grid-area: duration;
+  justify-self: end;
+  min-width: 48px;
+  text-align: right;
+}
+
+.debug-status {
+  display: inline-grid;
+  min-height: 20px;
+  place-items: center;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.debug-status.success {
+  background: rgba(87, 135, 94, 0.14);
+  color: #3f6c44;
+}
+
+.debug-status.error {
+  background: rgba(184, 77, 64, 0.14);
+  color: #a24639;
+}
+
+.debug-log-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.debug-log-detail.empty,
+.debug-empty {
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  min-height: 180px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.debug-log-detail-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.debug-log-detail-header > div:first-child {
+  display: grid;
+  grid-template-areas:
+    "status title"
+    "status description";
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 8px;
+  min-width: 0;
+}
+
+.debug-log-detail-header .debug-status {
+  grid-area: status;
+  margin-top: 1px;
+}
+
+.debug-log-detail-header h2 {
+  grid-area: title;
+  overflow: hidden;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.debug-log-detail-header p {
+  grid-area: description;
+  overflow: hidden;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.debug-log-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.debug-log-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-soft);
+  white-space: nowrap;
+}
+
+.debug-error {
+  margin: 0;
+  padding: 8px 9px;
+  border: 1px solid rgba(184, 77, 64, 0.26);
+  border-radius: 6px;
+  background: rgba(184, 77, 64, 0.08);
+  color: #8f3f34;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+@media (max-width: 920px) {
+  .debug-log-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+
+  .debug-log-list {
+    max-height: 260px;
+  }
+}
+
+@media (max-width: 620px) {
+  .debug-log-row {
+    grid-template-areas:
+      "status title duration"
+      "status meta token";
+    grid-template-columns: 56px minmax(0, 1fr) max-content;
+  }
+}

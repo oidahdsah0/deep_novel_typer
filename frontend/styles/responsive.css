@@ -1,0 +1,253 @@
+@media (max-width: 1100px) {
+  .workspace-shell {
+    grid-template-columns:
+      minmax(220px, var(--project-rail-width, 320px)) minmax(360px, 1fr)
+      minmax(260px, var(--insight-rail-width, 360px));
+    overflow-x: auto;
+  }
+
+  .library-shell {
+    grid-template-columns:
+      minmax(200px, 260px) minmax(360px, 1fr)
+      minmax(280px, var(--library-detail-width, 400px));
+    overflow-x: auto;
+  }
+
+  .workspace-shell.left-rail-hidden {
+    grid-template-columns: minmax(360px, 1fr) minmax(260px, var(--insight-rail-width, 360px));
+  }
+
+  .workspace-shell.right-rail-hidden {
+    grid-template-columns: minmax(220px, var(--project-rail-width, 320px)) minmax(360px, 1fr);
+  }
+
+  .workspace-shell.left-rail-hidden.right-rail-hidden {
+    grid-template-columns: minmax(360px, 1fr);
+  }
+
+  .library-shell.left-rail-hidden {
+    grid-template-columns: minmax(360px, 1fr) minmax(280px, var(--library-detail-width, 400px));
+  }
+
+  .library-shell.right-rail-hidden {
+    grid-template-columns: minmax(200px, 260px) minmax(360px, 1fr);
+  }
+
+  .library-shell.left-rail-hidden.right-rail-hidden {
+    grid-template-columns: minmax(360px, 1fr);
+  }
+
+  .editor-topbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+
+  .editor-titlebar {
+    flex: 1 1 220px;
+    min-height: 34px;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .editor-left-rail-toggle {
+    position: static;
+  }
+
+  .editor-titlebar h2 {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .editor-titlebar .eyebrow {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .editor-topbar-actions {
+    flex: 0 1 auto;
+    width: auto;
+    margin-top: 0;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+
+  .editor-stats {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    white-space: normal;
+  }
+
+  .editor-tool-buttons {
+    flex-wrap: nowrap;
+  }
+
+  .editor-stats span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .editor-right-rail-toggle {
+    position: static;
+  }
+
+  .writing-surface,
+  .writing-mirror {
+    padding: 36px;
+    padding-bottom: 112px;
+    font-size: 19px;
+  }
+
+  .suggestion-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .prompt-manager-grid {
+    grid-template-columns: minmax(150px, 200px) minmax(150px, 200px) minmax(360px, 1fr);
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace-shell,
+  .library-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .project-rail,
+  .editor-pane,
+  .insight-rail,
+  .library-sidebar,
+  .library-main,
+  .project-detail {
+    min-height: auto;
+  }
+
+  .rail-resize-handle {
+    display: none;
+  }
+
+  .editor-topbar,
+  .library-header,
+  .detail-heading {
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .library-header,
+  .detail-heading {
+    flex-direction: column;
+  }
+
+  .editor-titlebar,
+  .editor-topbar-actions,
+  .library-titlebar,
+  .library-header-actions {
+    width: 100%;
+  }
+
+  .editor-titlebar {
+    flex: 1 1 100%;
+    padding-inline: 0;
+  }
+
+  .editor-topbar-actions,
+  .library-header-actions {
+    justify-content: space-between;
+  }
+
+  .editor-topbar-actions {
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .editor-tool-buttons {
+    flex-wrap: wrap;
+  }
+
+  .writing-surface {
+    height: 58vh;
+    min-height: 58vh;
+    padding: 22px;
+    padding-bottom: 96px;
+    font-size: 18px;
+  }
+
+  .writing-mirror {
+    padding: 22px;
+    padding-bottom: 96px;
+    font-size: 18px;
+  }
+
+  .draft-fab-menu {
+    bottom: 22px;
+    max-width: calc(100% - 36px);
+  }
+
+  .draft-fab-menu:hover .draft-fab-actions,
+  .draft-fab-menu:focus-within .draft-fab-actions {
+    max-width: min(330px, calc(100vw - 112px));
+  }
+
+  .draft-fab-action {
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .markdown-toolbar,
+  .markdown-ai-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .markdown-mode-switch {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .markdown-ai-actions .compact-action {
+    width: 100%;
+  }
+
+  .suggestion-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .version-create,
+  .version-manager,
+  .prompt-manager-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-token-grid,
+  .preview-summary-grid,
+  .preview-material-grid,
+  .prompt-version-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .prompt-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .preset-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(3, 34px);
+  }
+
+}

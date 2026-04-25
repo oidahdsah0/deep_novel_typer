@@ -1,0 +1,181 @@
+.draft-fab-menu {
+  position: absolute;
+  bottom: auto;
+  z-index: 4;
+  gap: 8px;
+  max-width: calc(100% - 36px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    top 160ms ease;
+}
+
+.draft-fab-menu.visible {
+  opacity: 0.42;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.draft-fab-menu.visible:hover,
+.draft-fab-menu.visible:focus-within {
+  opacity: 1;
+}
+
+.draft-fab-menu.has-selection {
+  opacity: 1;
+}
+
+.draft-fab-trigger {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(32, 33, 31, 0.12);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #f7f7f1;
+  cursor: pointer;
+}
+
+.draft-fab-actions {
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-content: center;
+  min-width: 0;
+  max-width: 0;
+  max-height: 0;
+  gap: 6px;
+  margin: -10px;
+  padding: 10px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-6px);
+  transition:
+    max-width 220ms ease,
+    max-height 220ms ease,
+    opacity 160ms ease,
+    transform 180ms ease;
+}
+
+.draft-fab-menu:hover .draft-fab-actions,
+.draft-fab-menu:focus-within .draft-fab-actions,
+.draft-fab-menu.expanded .draft-fab-actions {
+  max-width: min(620px, calc(100vw - 120px));
+  max-height: min(42vh, 260px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  scrollbar-width: thin;
+}
+
+.draft-fab-action {
+  flex: 0 0 auto;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.draft-fab-action:hover {
+  border-color: #c8c8bf;
+  background: #fbfbf7;
+}
+
+.draft-fab-action.polish {
+  border-color: rgba(32, 33, 31, 0.1);
+  background: rgba(245, 245, 240, 0.92);
+  color: #97978e;
+}
+
+.draft-fab-action.polish.active {
+  border-color: rgba(75, 117, 79, 0.52);
+  background: #4b754f;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(75, 117, 79, 0.18);
+}
+
+.draft-fab-action.polish.active:hover {
+  border-color: rgba(75, 117, 79, 0.72);
+  background: #416d46;
+}
+
+.draft-fab-action.blueprint {
+  border-color: rgba(183, 139, 58, 0.34);
+  color: #8a6521;
+}
+
+.draft-fab-action.blueprint:hover {
+  border-color: rgba(183, 139, 58, 0.5);
+  background: #fff8e6;
+}
+
+.draft-fab-action.chat {
+  border-color: rgba(75, 117, 79, 0.28);
+  color: #4b754f;
+}
+
+.draft-fab-action.chat:hover {
+  border-color: rgba(75, 117, 79, 0.5);
+  background: #f0f7ee;
+}
+
+.draft-fab-action:disabled {
+  opacity: 0.64;
+  cursor: not-allowed;
+}
+
+.draft-fab-action:disabled:hover {
+  border-color: rgba(32, 33, 31, 0.1);
+  background: rgba(245, 245, 240, 0.92);
+}
+
+.selection-fab-menu {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    left 120ms ease,
+    top 120ms ease;
+}
+
+.selection-fab-menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.selection-fab-action {
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid rgba(32, 33, 31, 0.16);
+  border-radius: 999px;
+  background: rgba(32, 33, 31, 0.9);
+  color: #f7f7f1;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.selection-fab-action:hover {
+  background: var(--ink);
+}

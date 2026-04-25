@@ -1,0 +1,133 @@
+.library-shell {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 280px) minmax(420px, 1fr)
+    minmax(320px, var(--library-detail-width, 400px));
+  min-height: 100vh;
+  padding: 18px;
+  gap: 14px;
+}
+
+.library-shell.left-rail-hidden {
+  grid-template-columns: minmax(420px, 1fr) minmax(320px, var(--library-detail-width, 400px));
+}
+
+.library-shell.right-rail-hidden {
+  grid-template-columns: minmax(220px, 280px) minmax(420px, 1fr);
+}
+
+.library-shell.left-rail-hidden.right-rail-hidden {
+  grid-template-columns: minmax(420px, 1fr);
+}
+
+.library-shell.rail-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+.library-sidebar,
+.library-main,
+.project-detail {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.library-sidebar,
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 36px);
+  padding: 18px;
+  position: relative;
+}
+
+.library-main {
+  min-width: 0;
+  min-height: calc(100vh - 36px);
+  padding: 22px;
+}
+
+.library-header,
+.library-titlebar,
+.library-header-actions,
+.detail-heading,
+.detail-meta,
+.search-box,
+.filter-pill,
+.nav-pill,
+.side-action-button,
+.primary-button,
+.primary-icon-button,
+.secondary-button,
+.danger-button,
+.back-link {
+  display: flex;
+  align-items: center;
+}
+
+.library-header,
+.detail-heading {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.library-titlebar,
+.library-header-actions {
+  min-width: 0;
+  gap: 12px;
+}
+
+.detail-heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.library-titlebar > div {
+  min-width: 0;
+}
+
+.library-titlebar h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.library-header-actions {
+  justify-content: flex-end;
+}
+
+.library-rail-toggle {
+  flex: 0 0 auto;
+}
+
+.library-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.library-stats div {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfbf7;
+}
+
+.library-stats strong {
+  font-size: 20px;
+}
+
+.library-stats span,
+.detail-meta,
+.empty-note {
+  color: var(--muted);
+  font-size: 13px;
+}

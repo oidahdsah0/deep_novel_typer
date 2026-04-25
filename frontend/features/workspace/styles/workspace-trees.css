@@ -1,0 +1,278 @@
+.chapter-list,
+.doc-list,
+.suggestion-list {
+  display: grid;
+  gap: 8px;
+}
+
+.chapter-link {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+
+.chapter-link span,
+.doc-link span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chapter-link small {
+  font-size: 12px;
+}
+
+.chapter-link.active {
+  border-color: #cfcfc6;
+  background: var(--panel-soft);
+  color: var(--ink);
+}
+
+.doc-link {
+  gap: 8px;
+  min-height: 34px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.doc-link.active {
+  background: var(--panel-soft);
+  color: var(--ink);
+}
+
+.doc-tree {
+  display: grid;
+  gap: 4px;
+}
+
+.chapter-docx-dialog {
+  width: min(100%, 560px);
+}
+
+.chapter-docx-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.chapter-docx-summary span {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(251, 251, 247, 0.86);
+}
+
+.chapter-docx-tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.chapter-docx-tools .secondary-button {
+  margin-top: 0;
+}
+
+.chapter-docx-list {
+  display: grid;
+  gap: 6px;
+  max-height: min(44vh, 420px);
+  padding: 4px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.72);
+}
+
+.chapter-docx-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.chapter-docx-row:hover,
+.chapter-docx-row.selected {
+  border-color: rgba(32, 33, 31, 0.12);
+  background: var(--panel);
+  color: var(--ink);
+}
+
+.chapter-docx-row input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ink);
+}
+
+.chapter-docx-row > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: 12px;
+}
+
+.chapter-docx-row strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chapter-docx-row small {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.document-draft-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 8px;
+}
+
+.document-draft-form input {
+  min-width: 0;
+  height: 34px;
+  min-height: 34px;
+  padding: 7px 9px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.doc-node {
+  display: grid;
+  gap: 3px;
+}
+
+.doc-node-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding-left: calc(var(--depth, 0) * 14px);
+  border-radius: 8px;
+}
+
+.doc-node-row:hover,
+.doc-node-row.active {
+  background: var(--panel-soft);
+}
+
+.doc-node-row.dragging {
+  opacity: 0.48;
+}
+
+.doc-node-row.drop-inside {
+  outline: 1px solid rgba(184, 138, 57, 0.44);
+  background: rgba(184, 138, 57, 0.1);
+}
+
+.drag-handle {
+  width: 22px;
+  height: 28px;
+  opacity: 0;
+  cursor: grab;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.doc-node-row:hover .drag-handle,
+.doc-node-row:focus-within .drag-handle,
+.doc-node-row.dragging .drag-handle {
+  opacity: 1;
+}
+
+.doc-node-main {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 8px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+
+.doc-node-row.active .doc-node-main,
+.doc-node-main:hover {
+  color: var(--ink);
+}
+
+.doc-node-main span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-node-main small {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.doc-node-actions {
+  padding-right: 4px;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.doc-node-row:hover .doc-node-actions,
+.doc-node-row.active .doc-node-actions,
+.doc-node-row:focus-within .doc-node-actions {
+  opacity: 1;
+}
+
+.doc-empty-child {
+  margin: 0;
+  padding: 3px 8px 5px calc(var(--depth, 0) * 14px + 10px);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tree-drop-zone {
+  height: 4px;
+  margin-left: calc(var(--depth, 0) * 14px + 6px);
+  border-radius: 999px;
+  transition: height 120ms ease, background 120ms ease;
+}
+
+.tree-drop-zone.visible {
+  height: 8px;
+}
+
+.tree-drop-zone.active {
+  background: rgba(184, 138, 57, 0.52);
+}

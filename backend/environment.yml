@@ -1,0 +1,18 @@
+name: novel
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - aiosqlite>=0.20.0
+      - chromadb==1.5.9
+      - fastapi>=0.115.0
+      - jieba==0.42.1
+      - openai>=1.60.0
+      - pydantic>=2.10.0
+      - PyYAML>=6.0.0
+      - pytest>=8.3.0
+      - pytest-asyncio>=0.24.0
+      - uvicorn[standard]>=0.32.0

@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "outDir": ".test-build",
+    "rootDir": ".",
+    "tsBuildInfoFile": ".test-build/tsconfig.test.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": [
+    "lib/api/chatStreamReader.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

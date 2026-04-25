@@ -1,0 +1,105 @@
+.api-config-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.api-config-section {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.72);
+}
+
+.api-config-section h4 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.api-config-field-note {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.api-config-create-dialog {
+  width: min(calc(100vw - 36px), 760px);
+}
+
+.api-config-create-dialog .dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.api-config-create-dialog .dialog-actions .secondary-button {
+  margin-top: 0;
+}
+
+.api-health-summary {
+  width: fit-content;
+  padding: 5px 7px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.api-health-summary.ok {
+  background: rgba(92, 133, 96, 0.12);
+  color: #4f7d52;
+}
+
+.api-health-summary.error {
+  background: rgba(176, 82, 58, 0.12);
+  color: var(--brick);
+}
+
+.api-health-panel {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.82);
+}
+
+.api-health-panel.ok {
+  border-left-color: #5c8560;
+}
+
+.api-health-panel.error {
+  border-left-color: var(--brick);
+}
+
+.api-health-panel div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.api-health-panel span,
+.api-health-panel small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.api-health-panel strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.api-health-panel p {
+  margin: 0;
+  color: #555b54;
+  font-size: 13px;
+  line-height: 1.55;
+}

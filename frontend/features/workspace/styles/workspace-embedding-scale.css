@@ -1,0 +1,59 @@
+.writing-heatmap-scale {
+  position: absolute;
+  right: clamp(18px, 3vw, 34px);
+  bottom: clamp(18px, 3vw, 34px);
+  z-index: 5;
+  display: grid;
+  gap: 7px;
+  width: min(340px, calc(100% - 36px));
+  padding: 10px 12px;
+  border: 1px solid rgba(32, 33, 31, 0.12);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.94);
+  box-shadow: 0 14px 34px rgba(32, 33, 31, 0.14);
+  color: var(--muted);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.writing-heatmap-scale-header,
+.writing-heatmap-scale-ticks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.writing-heatmap-scale-header strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.writing-heatmap-scale-track {
+  position: relative;
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f7ee8 0%, #6fcfd0 35%, #f4ce62 65%, #d94841 100%);
+}
+
+.writing-heatmap-scale-marker {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+  transform: translateX(-1px);
+}
+
+.writing-heatmap-scale-ticks {
+  font-weight: 750;
+}

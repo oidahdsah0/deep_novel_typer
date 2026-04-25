@@ -1,0 +1,222 @@
+.workspace-shell {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, var(--project-rail-width, 320px)) minmax(420px, 1fr)
+    minmax(280px, var(--insight-rail-width, 360px));
+  min-height: 100vh;
+  padding: 18px;
+  gap: 14px;
+}
+
+.workspace-shell.left-rail-hidden {
+  grid-template-columns: minmax(420px, 1fr) minmax(280px, var(--insight-rail-width, 360px));
+}
+
+.workspace-shell.right-rail-hidden {
+  grid-template-columns: minmax(260px, var(--project-rail-width, 320px)) minmax(420px, 1fr);
+}
+
+.workspace-shell.left-rail-hidden.right-rail-hidden {
+  grid-template-columns: minmax(420px, 1fr);
+}
+
+.workspace-shell.rail-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+.back-link {
+  gap: 7px;
+  width: fit-content;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-rail,
+.editor-pane,
+.insight-rail {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.project-rail,
+.insight-rail {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 36px);
+  padding: 18px;
+}
+
+.project-rail,
+.insight-rail {
+  position: relative;
+}
+
+.rail-resize-handle {
+  position: absolute;
+  top: 16px;
+  right: -8px;
+  z-index: 8;
+  width: 14px;
+  height: calc(100% - 32px);
+  border-radius: 999px;
+  background: transparent;
+  cursor: col-resize;
+}
+
+.rail-resize-handle-left {
+  right: auto;
+  left: -8px;
+}
+
+.rail-resize-handle::after {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 2px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(32, 33, 31, 0.12);
+  content: "";
+  transform: translateY(-50%);
+  transition:
+    background 160ms ease,
+    height 160ms ease;
+}
+
+.rail-resize-handle:hover::after,
+.rail-resizing .rail-resize-handle::after {
+  height: 68px;
+  background: rgba(32, 33, 31, 0.34);
+}
+
+.brand-row,
+.editor-topbar,
+.editor-titlebar,
+.editor-topbar-actions,
+.insight-header,
+.header-actions,
+.section-title,
+.rail-actions,
+.draft-fab-menu,
+.draft-fab-actions,
+.draft-fab-action,
+.preset-toolbar,
+.generation-section-title,
+.preset-save-hint,
+.generated-draft-meta,
+.settings-heading,
+.dialog-actions,
+.suggestion-meta,
+.editor-stats,
+.editor-stats span,
+.doc-link {
+  display: flex;
+  align-items: center;
+}
+
+.brand-row {
+  gap: 12px;
+}
+
+.rail-hero {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 4px 0 22px;
+  border-bottom: 1px solid rgba(32, 33, 31, 0.1);
+}
+
+.project-identity {
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid rgba(222, 222, 215, 0.78);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.72);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #f7f7f1;
+  font-weight: 700;
+}
+
+.project-identity .brand-mark {
+  width: 48px;
+  height: 48px;
+}
+
+.rail-actions {
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.rail-section {
+  padding-top: 0;
+}
+
+.rail-section + .rail-section {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.section-title > span {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+
+.section-tools,
+.doc-node-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tiny-tool {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tiny-tool:hover {
+  border-color: var(--line);
+  background: #fbfbf7;
+  color: var(--ink);
+}
+
+.danger-tool {
+  color: var(--brick);
+}
+
+.danger-tool:hover {
+  border-color: rgba(183, 102, 77, 0.24);
+  background: #fff3ee;
+  color: var(--brick);
+}

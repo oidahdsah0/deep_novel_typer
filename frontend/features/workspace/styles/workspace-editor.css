@@ -1,0 +1,334 @@
+.editor-pane {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  height: calc(100vh - 36px);
+  min-height: calc(100vh - 36px);
+  max-height: calc(100vh - 36px);
+  overflow: hidden;
+}
+
+.editor-topbar {
+  position: relative;
+  align-items: center;
+  container-name: editor-topbar;
+  container-type: inline-size;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editor-titlebar {
+  flex: 1 1 220px;
+  min-width: 0;
+  gap: 12px;
+}
+
+.editor-title-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.editor-title-row {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+
+.editor-titlebar h2 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editor-title-word-count {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.editor-topbar-actions {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.editor-tool-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor-rail-toggle {
+  flex: 0 0 auto;
+}
+
+.editor-topbar .icon-button {
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.82);
+  color: var(--muted);
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.editor-topbar .icon-button:hover,
+.editor-topbar .icon-button:focus-visible,
+.editor-topbar .icon-button.active {
+  border-color: rgba(32, 33, 31, 0.24);
+  background: #fff;
+  color: var(--ink);
+}
+
+.editor-topbar .icon-button.active {
+  box-shadow: 0 0 0 2px rgba(75, 107, 135, 0.1);
+}
+
+.editor-stats {
+  flex: 0 0 auto;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.editor-stats span {
+  gap: 6px;
+}
+
+.editor-stats .editor-save-compact {
+  display: none;
+  cursor: help;
+}
+
+.save-state {
+  color: var(--sage);
+}
+
+.save-state.saving {
+  color: var(--indigo);
+}
+
+.save-state.error {
+  color: var(--brick);
+}
+
+.save-state.conflict {
+  color: var(--brick);
+}
+
+@container editor-topbar (max-width: 980px) {
+  .editor-stats {
+    gap: 8px;
+  }
+
+  .editor-stats .editor-save-compact {
+    display: grid;
+  }
+
+  .editor-stats .editor-stat-save,
+  .editor-stats .editor-stat-date {
+    display: none;
+  }
+}
+
+.writing-stage {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.writing-surface,
+.writing-mirror {
+  width: 100%;
+  min-height: 0;
+  padding: clamp(28px, 5vw, 72px);
+  padding-bottom: calc(clamp(28px, 5vw, 72px) + 78px);
+  background: transparent;
+  color: var(--ink);
+  font-family:
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  font-size: 20px;
+  line-height: 58px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.writing-surface {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  border: 0;
+  caret-color: transparent;
+  outline: 0;
+  resize: none;
+}
+
+.writing-caret {
+  position: absolute;
+  z-index: 2;
+  width: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+  pointer-events: none;
+  transform: translateX(-1px);
+  animation: writing-caret-blink 1.05s steps(1, end) infinite;
+}
+
+.writing-mirror {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  min-height: auto;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.writing-surface::selection {
+  background: rgba(111, 143, 114, 0.22);
+}
+
+.writing-surface.pending-draft-review {
+  cursor: default;
+}
+
+.writing-surface.pending-draft-review::selection {
+  background: rgba(111, 143, 114, 0.36);
+}
+
+.pending-draft-confirmation {
+  position: absolute;
+  right: clamp(18px, 3vw, 34px);
+  bottom: clamp(68px, 7vw, 96px);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(420px, calc(100% - 36px));
+  padding: 10px 12px;
+  border: 1px solid rgba(32, 33, 31, 0.14);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.97);
+  box-shadow: 0 16px 36px rgba(32, 33, 31, 0.14);
+  color: var(--ink);
+}
+
+.pending-draft-confirmation.generating {
+  border-color: rgba(51, 71, 122, 0.28);
+}
+
+.pending-draft-confirmation.ready {
+  border-color: rgba(75, 117, 79, 0.42);
+}
+
+.pending-draft-confirmation.error {
+  border-color: rgba(147, 71, 54, 0.34);
+}
+
+.pending-draft-confirmation > div:first-of-type {
+  min-width: 0;
+}
+
+.pending-draft-label {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.pending-draft-detail {
+  display: block;
+  max-width: 260px;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pending-draft-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pending-draft-action {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.pending-draft-action:hover {
+  transform: translateY(-1px);
+}
+
+.pending-draft-action.accept {
+  border-color: rgba(75, 117, 79, 0.6);
+  background: #4b754f;
+  color: #fff;
+}
+
+.pending-draft-action.reject {
+  color: var(--brick);
+}
+
+.pending-draft-action.reject:hover {
+  border-color: rgba(147, 71, 54, 0.36);
+  background: rgba(147, 71, 54, 0.08);
+}
+
+.pending-draft-spinner {
+  color: var(--indigo);
+  animation: pending-draft-spin 900ms linear infinite;
+}
+
+@keyframes pending-draft-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes writing-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.writing-surface.doc-mode,
+.writing-mirror.doc-mode {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}

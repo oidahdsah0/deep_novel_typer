@@ -1,0 +1,163 @@
+.detail-meta {
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.detail-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-description {
+  min-height: 112px;
+  padding: 12px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.detail-description.small {
+  min-height: 86px;
+}
+
+.shortcut-settings-form {
+  margin-top: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.form-grid input,
+.form-grid select,
+.project-create-dialog > input,
+.danger-zone input {
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.primary-button,
+.primary-icon-button,
+.secondary-button,
+.danger-button {
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-button,
+.primary-icon-button {
+  background: var(--ink);
+  color: #f7f7f1;
+}
+
+.secondary-button {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.secondary-button.export-action {
+  border-color: rgba(62, 118, 190, 0.28);
+  background: rgba(236, 245, 255, 0.86);
+  color: #2f76c2;
+}
+
+.secondary-button.export-action:hover {
+  border-color: rgba(62, 118, 190, 0.42);
+  background: #e3f1ff;
+}
+
+.compact-action {
+  height: 34px;
+  min-height: 34px;
+  margin-top: 0;
+  padding: 0 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.danger-button {
+  background: #fff3ee;
+  color: var(--brick);
+}
+
+.danger-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.primary-icon-button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.danger-zone {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.project-create-dialog {
+  width: min(calc(100vw - 36px), 560px);
+}
+
+.project-create-dialog .dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.project-create-dialog .dialog-actions .secondary-button {
+  margin-top: 0;
+}
+
+.danger-zone p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.visually-hidden-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.library-transfer-notice {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 30;
+  max-width: min(420px, calc(100vw - 36px));
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fffdf6;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}

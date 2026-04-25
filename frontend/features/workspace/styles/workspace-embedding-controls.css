@@ -1,0 +1,68 @@
+.embedding-toolbox-drawer {
+  --embedding-control-height: 38px;
+  --embedding-icon-control-size: 38px;
+}
+
+.embedding-field input,
+.embedding-field select,
+.embedding-tag-form input,
+.embedding-tag-form textarea,
+.embedding-tag-card input,
+.embedding-tag-card textarea,
+.embedding-result-block select {
+  box-sizing: border-box;
+  min-height: var(--embedding-control-height);
+  padding: 8px 10px;
+  line-height: 1.25;
+}
+
+.embedding-field input:not([type="color"]),
+.embedding-field select,
+.embedding-tag-form input:not([type="color"]),
+.embedding-tag-card input:not([type="color"]),
+.embedding-result-block select {
+  height: var(--embedding-control-height);
+}
+
+.embedding-tag-form textarea,
+.embedding-tag-card textarea {
+  min-height: calc(var(--embedding-control-height) * 2 + 12px);
+}
+
+.embedding-field-grid {
+  align-items: end;
+}
+
+.embedding-field-grid .embedding-field:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.embedding-segmented button,
+.embedding-tag-pick,
+.embedding-check-row,
+.embedding-toolbox-drawer .primary-button,
+.embedding-toolbox-drawer .secondary-button {
+  min-height: var(--embedding-control-height);
+}
+
+.embedding-segmented button,
+.embedding-tag-pick,
+.embedding-toolbox-drawer .primary-button,
+.embedding-toolbox-drawer .secondary-button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.embedding-check-row input[type="checkbox"],
+.embedding-tag-pick input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #4b6b87;
+}
+
+.embedding-toolbox-drawer .icon-button {
+  width: var(--embedding-icon-control-size);
+  height: var(--embedding-icon-control-size);
+}

@@ -1,0 +1,164 @@
+.version-dialog {
+  width: min(100%, 980px);
+}
+
+.prompt-version-dialog {
+  width: min(calc(100vw - 36px), 1080px);
+  min-height: min(560px, calc(100vh - 36px));
+}
+
+.version-create {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+}
+
+.version-manager {
+  display: grid;
+  grid-template-columns: minmax(190px, 260px) minmax(0, 1fr);
+  gap: 12px;
+  min-height: 420px;
+}
+
+.version-list {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 8px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.78);
+}
+
+.version-list-item {
+  display: grid;
+  gap: 4px;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.version-list-item.active,
+.version-list-item:hover {
+  border-color: var(--line);
+  background: var(--panel);
+}
+
+.version-list-item span {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.version-list-item small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.version-preview {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.version-preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.version-preview-heading div {
+  display: grid;
+  gap: 3px;
+}
+
+.version-preview-heading span,
+.version-preview p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.version-preview .secondary-button {
+  margin-top: 0;
+}
+
+.version-preview pre {
+  min-height: 0;
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  border-radius: 8px;
+  background: #fbfbf7;
+  color: #3f443e;
+  font-family:
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.prompt-version-manager {
+  min-height: 500px;
+}
+
+.prompt-version-preview {
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+}
+
+.prompt-version-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.prompt-version-meta div {
+  display: grid;
+  gap: 4px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 251, 247, 0.82);
+}
+
+.prompt-version-meta span,
+.prompt-version-fields .preview-block-heading span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.prompt-version-meta strong {
+  font-size: 15px;
+}
+
+.prompt-version-fields {
+  display: grid;
+  gap: 8px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.prompt-version-fields textarea {
+  min-height: 140px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfbf7;
+  color: var(--ink);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  resize: vertical;
+}

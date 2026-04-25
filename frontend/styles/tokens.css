@@ -1,0 +1,13 @@
+:root {
+  --background: #f6f6f3;
+  --panel: #ffffff;
+  --panel-soft: #f1f0eb;
+  --ink: #20211f;
+  --muted: #747873;
+  --line: #deded7;
+  --sage: #6f8f72;
+  --brick: #b7664d;
+  --indigo: #59677f;
+  --amber: #b88a39;
+  --shadow: 0 18px 55px rgba(30, 31, 29, 0.08);
+}

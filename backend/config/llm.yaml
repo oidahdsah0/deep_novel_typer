@@ -1,0 +1,23 @@
+# LLM 配置只在后端启动时读取一次。
+# 密钥建议放在环境变量里，不要写进这个文件。
+
+enabled: true
+api_key_env: DEEPSEEK_API_KEY
+api_key_required: true
+base_url: https://api.deepseek.com
+model: deepseek-v4-pro
+timeout_seconds: 60
+
+headers:
+  Accept: application/json
+
+request:
+  common:
+    thinking:
+      type: enabled
+    reasoning_effort: high
+    max_tokens: 4096
+    response_format:
+      type: json_object
+  non_stream:
+    stream: false

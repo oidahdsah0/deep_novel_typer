@@ -1,0 +1,199 @@
+.typewriter-editor {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 0;
+  background: transparent;
+}
+
+.typewriter-editor .cm-editor {
+  height: 100%;
+  background: transparent;
+  color: var(--ink);
+  outline: 0;
+}
+
+.typewriter-editor .cm-focused {
+  outline: 0;
+}
+
+.typewriter-editor .cm-scroller {
+  overflow: auto;
+  font-family:
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  font-size: var(--typewriter-font-size-px, 20px);
+  line-height: var(--typewriter-line-height-multiplier, 2.9);
+}
+
+.typewriter-editor .cm-content {
+  min-height: 100%;
+  padding: clamp(28px, 5vw, 72px);
+  padding-bottom: calc(clamp(28px, 5vw, 72px) + 78px);
+  caret-color: var(--ink);
+}
+
+.typewriter-editor .cm-line {
+  padding: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.typewriter-editor .cm-line.typewriter-paragraph-line {
+  text-indent: calc(var(--typewriter-first-line-indent-chars, 0) * 1em);
+  padding-bottom: calc(
+    var(--typewriter-paragraph-gap-lines, 0) * var(--typewriter-line-height-px, 58px)
+  );
+}
+
+.typewriter-editor .cm-selectionBackground,
+.typewriter-editor.cm-focused .cm-selectionBackground,
+.typewriter-editor .cm-content ::selection {
+  background: rgba(111, 143, 114, 0.22);
+}
+
+.typewriter-toolbox-drawer {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 32;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(360px, calc(100vw - 36px));
+  max-height: calc(100vh - 36px);
+  border: 1px solid rgba(32, 33, 31, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 60px rgba(32, 33, 31, 0.18);
+  backdrop-filter: blur(26px);
+  overflow: hidden;
+}
+
+.typewriter-toolbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.typewriter-toolbox-header h2 {
+  font-size: 20px;
+}
+
+.typewriter-toolbox-body {
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  padding: 14px;
+  overflow: auto;
+}
+
+.typewriter-message {
+  padding: 9px 10px;
+  border: 1px solid rgba(75, 117, 79, 0.2);
+  border-radius: 8px;
+  background: #f3f8f1;
+  color: #4b754f;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.typewriter-message.error {
+  border-color: rgba(183, 102, 77, 0.22);
+  background: #fff3ee;
+  color: var(--brick);
+}
+
+.typewriter-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.typewriter-number-field {
+  display: grid;
+  gap: 7px;
+}
+
+.typewriter-number-field span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.typewriter-number-field div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: 7px;
+}
+
+.typewriter-number-field input {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfbf7;
+  color: var(--ink);
+  font-size: 12px;
+  outline: 0;
+}
+
+.typewriter-number-field small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.typewriter-preview {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(32, 33, 31, 0.1);
+  border-radius: 8px;
+  background: #fbfbf7;
+  color: var(--muted);
+}
+
+.typewriter-preview p {
+  margin: 0 0 calc(
+    var(--typewriter-paragraph-gap-lines, 0) * var(--typewriter-preview-line-height-px, 43.5px)
+  );
+  color: var(--ink);
+  font-family:
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  font-size: var(--typewriter-preview-font-size-px, 15px);
+  line-height: var(--typewriter-line-height-multiplier, 2.9);
+  text-indent: calc(var(--typewriter-first-line-indent-chars, 0) * 1em);
+}
+
+.typewriter-preview p:last-child {
+  margin-bottom: 0;
+}
+
+.typewriter-toolbox-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.typewriter-toolbox-actions button {
+  align-items: center;
+  height: 36px;
+}
+
+.typewriter-toolbox-actions .secondary-button {
+  margin-top: 0;
+}
+
+@media (max-width: 520px) {
+  .typewriter-control-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,188 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 12px;
+  min-width: 0;
+  margin-top: 18px;
+}
+
+.project-summary-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 312px), 1fr));
+}
+
+.settings-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.settings-card {
+  display: grid;
+  gap: 10px;
+  min-height: 158px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.settings-card span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.settings-card strong {
+  font-size: 24px;
+}
+
+.settings-card p {
+  color: #5f625e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-card {
+  display: grid;
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 164px;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-card-with-actions {
+  padding: 0;
+}
+
+.project-card-main {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 162px;
+  padding: 16px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-card-main > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.project-card h3,
+.project-card span,
+.project-card small,
+.project-card p {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.project-card small {
+  display: block;
+  line-height: 1.45;
+}
+
+.project-summary-card .project-card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.project-summary-card .project-card-title {
+  display: block;
+  margin-top: 6px;
+  padding-block: 2px 3px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.project-summary-card .project-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #5f625e;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.project-summary-card .project-card-meta {
+  margin-top: auto;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.project-card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.project-card-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 250, 0.8);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.project-card-icon:hover {
+  background: #fffdf8;
+}
+
+.project-card-icon.export {
+  border-color: rgba(62, 118, 190, 0.28);
+  background: rgba(236, 245, 255, 0.86);
+  color: #2f76c2;
+}
+
+.project-card-icon.export:hover {
+  border-color: rgba(62, 118, 190, 0.42);
+  background: #e3f1ff;
+}
+
+.project-card-icon.danger {
+  color: var(--brick);
+}
+
+.project-card.active {
+  border-color: #b9beb5;
+  background: #f7f8f3;
+}
+
+.project-card span,
+.project-card small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.project-card p {
+  color: #5f625e;
+  font-size: 14px;
+  line-height: 1.7;
+}
